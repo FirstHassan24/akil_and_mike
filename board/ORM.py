@@ -6,9 +6,4 @@ from .models import Item,List
 items = Item.objects.all()
 lists = List.objects.all()
 for item in items:
-    
-    delete=items.objects.filter(item)
-    
-    delete.save()
-    
-    delete.delete()
+    item.delete()
