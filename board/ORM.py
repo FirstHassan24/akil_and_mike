@@ -2,13 +2,13 @@
 #1. in the shell import the models,
 #2. loop over the first model
 from .models import Item,List
-#store all the values from the model in a variable:
+
 items = Item.objects.all()
 lists = List.objects.all()
 for item in items:
-    #store  each item:
+    
     delete=items.objects.filter(item)
-    #save it to the database:
+    
     delete.save()
-    #delete each item you saved:
+    
     delete.delete()
