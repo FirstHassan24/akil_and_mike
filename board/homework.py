@@ -5,6 +5,7 @@ from board.models import *
 #3 delete each value as you loop through them:
 #for some reason 
 def run():
+    print("hello am i showing up in the terminal?")
     items = Item.objects.all()
     print(items)
     lists = List.objects.all()
