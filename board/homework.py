@@ -3,12 +3,24 @@ from board.models import *
 #1. catches all the rows in each model
 #2. evaluate each row one by one
 #3 delete each value as you loop through them:
-#for some reason 
 def run():
-    print("hello am i showing up in the terminal?")
-    items = Item.objects.all()
-    print(items)
-    lists = List.objects.all()
-    for item in items:
+    #print("hello am i showing up in the terminal?")
+    for item in Item.objects.all():
         item.delete()
-    
+    for list in List.objects.all():
+        list.delete()
+    # print(List.objects.all())
+    # print(Item.objects.all())
+    #TODO:2.2 Create 3 Lists  named "To Do", "In Progress", and "Done"?
+    todo=List(name="To DO")
+    todo.save()
+    progress=List(name="In Progress")
+    progress.save()
+    done=List(name="Done")
+    done.save()
+    print(List.objects.all())
+    print(Item.objects.all())
+    for list in List.objects.all():
+        print(list.name)
+
+

@@ -6,6 +6,7 @@ from django.db import models
 #trello list such as todo or in progress
 class List(models.Model):
     name = models.TextField(max_length=30)
+    
 
 #cards in a list, such as "make migrations" in the "TO DO" List
 class Item(models.Model):
