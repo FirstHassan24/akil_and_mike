@@ -11,7 +11,7 @@ def run():
         list.delete()
     # print(List.objects.all())
     # print(Item.objects.all())
-    #TODO:2.2 Create 3 Lists  named "To Do", "In Progress", and "Done"?
+    #TODO:2.2 Create 3 Lists  named "To Do", "In Progress", and "Done" in the list model?
     todo=List(name="To DO")
     todo.save()
     progress=List(name="In Progress")
@@ -22,5 +22,7 @@ def run():
     print(Item.objects.all())
     for list in List.objects.all():
         print(list.name)
+    #TODO:3.in "Done", create three items: "Eat breakfast", "Eat lunch", and "Shower". Do this by finding the List by filtering on its id (consider using .get) and storing it in a variable, then using the list's `item_set` relation. Remember: if you use the item_set relation, you don't have to pass a list argument when creating or filtering on an item, as they are already related to a specific list.
+    
 
 
