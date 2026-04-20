@@ -10,6 +10,7 @@ class List(models.Model):
 
 #cards in a list, such as "make migrations" in the "TO DO" List
 class Item(models.Model):
+    #creates the list variable on every item
     list= models.ForeignKey(List, on_delete=models.CASCADE)
     title = models.TextField(max_length=200,)
     description = models.TextField(null=True)
