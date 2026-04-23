@@ -28,7 +28,7 @@ def run():
     #create the lunch variable in items:
     lunch=Item(name="Eat lunch")
     #create the shower variable in  item:
-    
+    shower=Item(name="Shower")
     #use the list variable from the entry model to link breakfast with done:
     breakfast.list=done
     #save it:
