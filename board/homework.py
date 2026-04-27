@@ -22,17 +22,21 @@ def run():
     print(Item.objects.all())
     for list in List.objects.all():
         print(list.name)
-    #TODO:3.in "Done", create three items: "Eat breakfast", "Eat lunch", and "Shower". Do this by finding the List by filtering on its id (consider using .get) and storing it in a variable, then using the list's `item_set` relation. Remember: if you use the item_set relation, you don't have to pass a list argument when creating or filtering on an item, as they are already related to a specific list.
-    #create the breakfast variable in items:
-    breakfast=Item(name="Eat Breakfast")
-    #create the lunch variable in items:
-    lunch=Item(name="Eat lunch")
-    #create the shower variable in  item:
-    shower=Item(name="Shower")
-    #use the list variable from the entry model to link breakfast with done:
-    breakfast.list=done
-    #save it:
-    breakfast.save
-    #go into the terminal and test if you see breakfast with done
+    #TODO:3.in "Done", create three items: "Eat breakfast", "Eat lunch", and "Shower". Do this by finding the List by filtering on its name (consider using .get) and storing it in a variable,
+    # then using the list's `item_set` relation. Remember: if you use the item_set relation, you don't have to pass a list argument when creating or filtering on an item, as they are already related to a specific list.
+    #create the list that i will be storing the data into:
+    done = List.objects.get(name="Done")
+    #using the item_set method create and store breakfast inside done list
+    done.item_set.create(title="Eat breakfast")
+    #
+    done.item_set.create(title="Eat lunch",description="what are you eating in the afternoon?")
+    done.item_set.create(title="Shower")
+
+    #TODO:4. Find "Shower" by its name and delete it. Bonus: Google (or read the doc) how to do a case-insensitive filter and find it by searching for "shower" (lowercase).
+    Item.objects.get(title__iexact="shower").delete()
+
+    #TODO: 5.1.Write code that finds all items that start with "Eat" and 2.updates each of them to say "Make" and the rest of the string instead. In other words, "Eat Breakfast" becomes "Make Breakfast", etc. Note that while you've seen how to search for a substring anywhere in the value, you'll have to Google (or read the doc) to learn how to search only the start of a string. Note that whenever I say "find" I mean using the Django ORM, not with python if statements. You'll need loops, but no if statements in this assignment.
+    eat = Item.objects.filter(title__startswith="Eat")
+
 
 
