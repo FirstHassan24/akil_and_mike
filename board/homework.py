@@ -37,6 +37,7 @@ def run():
 
     #TODO: 5.1.Write code that finds all items that start with "Eat" and 2.updates each of them to say "Make" and the rest of the string instead. In other words, "Eat Breakfast" becomes "Make Breakfast", etc. Note that while you've seen how to search for a substring anywhere in the value, you'll have to Google (or read the doc) to learn how to search only the start of a string. Note that whenever I say "find" I mean using the Django ORM, not with python if statements. You'll need loops, but no if statements in this assignment.
     eat = Item.objects.filter(title__startswith="Eat")
+    
 
 
 
