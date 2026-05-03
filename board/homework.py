@@ -43,7 +43,8 @@ def run():
     make_lunch = eat.get(title="Eat lunch")
     make_lunch.title="Make Launch"
     make_lunch.save()
-    
+    #TODOL:5.2:mentor:good job doing it individually now set it up so it loops over the queryset and auto changes "Eat" to "Make".
+   
 
 
 
