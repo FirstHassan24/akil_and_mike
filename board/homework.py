@@ -43,7 +43,7 @@ def run():
     #loops over the eat queryset:
     for item in eat:
       #updates each of the title within it that starts with "eat to make"
-      item.title=item.title.replace("eat","make")
+      item.title=item.title.replace("Eat","make")
       item.save()
 
 
