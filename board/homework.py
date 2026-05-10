@@ -40,7 +40,9 @@ def run():
     make = eat.get(title="Eat breakfast")
    
     #TODOL:5.2:mentor:good job doing it individually now set it up so it loops over the queryset and auto changes "Eat" to "Make".
+    #loops over the eat queryset:
     for item in eat:
+      #updates each of the title within it that starts with "eat to make"
       item.title=item.title.replace("eat","make")
       item.save()
 
