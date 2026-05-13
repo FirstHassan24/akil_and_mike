@@ -46,4 +46,6 @@ def run():
       item.title=item.title.replace("Eat","make")
       item.save()
 
+      #TODO:6. Move the "Make lunch" item from "To Do" to "In Progress". You've seen that there are multiple ways to find this item, and multiple ways to change a relation field's value, so use whatever method you prefer.
+
 
