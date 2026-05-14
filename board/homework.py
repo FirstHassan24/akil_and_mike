@@ -46,6 +46,14 @@ def run():
       item.title=item.title.replace("Eat","make")
       item.save()
 
-      #TODO:6. Move the "Make lunch" item from "To Do" to "In Progress". You've seen that there are multiple ways to find this item, and multiple ways to change a relation field's value, so use whatever method you prefer.
+    #TODO:6. Move the "Make lunch" item from "To Do" to "In Progress". You've seen that there are multiple ways to find this item, and multiple ways to change a relation field's value, so use whatever method you prefer.(q:how do i move one child field to another parent?)
+    #thinking:so i know i can find the item by using an instance variable ex: lunch= Item.objects.get("Make lunch",)
+    lunch= Item.objects.get(title="make lunch")
+    in_progress = List.objects.get(name="In Progress")
+    # change the name that lunch is linked to in the parent model:
+    lunch.List= in_progress
+    lunch.save()
+
+    
 
 
